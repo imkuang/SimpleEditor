@@ -13,5 +13,7 @@
         <file>i18n/zh_CN.qm</file>
         <file>i18n/zh_CN.ts</file>
         <file>images/editor.png</file>
+        <file>images/redo.png</file>
+        <file>images/undo.png</file>
     </qresource>
 </RCC>

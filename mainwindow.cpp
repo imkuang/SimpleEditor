@@ -255,6 +255,22 @@ void MainWindow::createActions()
     QMenu *editMenu = menuBar()->addMenu(tr("Edit(&E)"));
     QToolBar *editToolBar = addToolBar(tr("Edit"));
 
+    const QIcon undoIcon = QIcon::fromTheme("edit-undo", QIcon(":/images/undo.png"));
+    QAction *undoAct = new QAction(undoIcon, tr("Undo(&U)"),this);
+    undoAct->setShortcuts(QKeySequence::Undo);
+    undoAct->setStatusTip(tr("Undo the last action"));
+    connect(undoAct, &QAction::triggered, textEdit, &QPlainTextEdit::undo);
+    editMenu->addAction(undoAct);
+
+    const QIcon redoIcon = QIcon::fromTheme("edit-redo", QIcon(":/images/redo.png"));
+    QAction *redoAct = new QAction(redoIcon, tr("Redo(&R)"),this);
+    redoAct->setShortcuts(QKeySequence::Redo);
+    redoAct->setStatusTip(tr("Redo the last action"));
+    connect(redoAct, &QAction::triggered, textEdit, &QPlainTextEdit::redo);
+    editMenu->addAction(redoAct);
+
+    editMenu->addSeparator();
+
     const QIcon cutIcon = QIcon::fromTheme("edit-cut", QIcon(":/images/cut.png"));
     QAction *cutAct = new QAction(cutIcon, tr("Cut(&X)"),this);
     cutAct->setShortcuts(QKeySequence::Cut);
@@ -290,10 +306,14 @@ void MainWindow::createActions()
     editToolBar->addAction(findAct);
 
 
+    undoAct->setEnabled(false);
+    redoAct->setEnabled(false);
     cutAct->setEnabled(false);
     copyAct->setEnabled(false);
     connect(textEdit, &QPlainTextEdit::copyAvailable, cutAct, &QAction::setEnabled);
     connect(textEdit, &QPlainTextEdit::copyAvailable, copyAct, &QAction::setEnabled);
+    connect(textEdit, &QPlainTextEdit::undoAvailable, undoAct, &QAction::setEnabled);
+    connect(textEdit, &QPlainTextEdit::redoAvailable, redoAct, &QAction::setEnabled);
 
     QMenu *helpMenu = menuBar()->addMenu(tr("Help(&H)"));
 
