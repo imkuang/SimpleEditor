@@ -97,7 +97,7 @@ void MainWindow::close()
 void MainWindow::about()
 {
     QMessageBox aboutBox(this);
-    aboutBox.setWindowTitle(tr("Simple Editor")+tr(" v1.1"));
+    aboutBox.setWindowTitle(tr("Simple Editor")+tr(" v1.2"));
     aboutBox.setIcon(QMessageBox::Information);
     aboutBox.setText(tr("This is Xiri's first application writen by Qt."));
     aboutBox.exec();
@@ -196,7 +196,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
 
     if (curFile.isEmpty()) //fileName为空时设置默认文件名
     {
-        curFile = tr("untitled");
+        curFile = tr("untitled.txt");
         isUntitled=true; //此时没有与编辑器内内容对应的文件
     }
     setWindowFilePath(curFile);
@@ -206,7 +206,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
 
 void MainWindow::createActions()
 {
-    QMenu *fileMenu = menuBar()->addMenu(tr("File(&F)"));
+    QMenu *fileMenu = menuBar()->addMenu(tr("File(&F)")); //文件菜单
     QToolBar *fileToolBar = addToolBar(tr("File"));
 
     const QIcon newIcon = QIcon::fromTheme("document-new",QIcon(":/images/new.png"));
@@ -252,18 +252,18 @@ void MainWindow::createActions()
     fileMenu->addAction(exitAct);
 
 
-    QMenu *editMenu = menuBar()->addMenu(tr("Edit(&E)"));
+    QMenu *editMenu = menuBar()->addMenu(tr("Edit(&E)")); //编辑菜单
     QToolBar *editToolBar = addToolBar(tr("Edit"));
 
     const QIcon undoIcon = QIcon::fromTheme("edit-undo", QIcon(":/images/undo.png"));
-    QAction *undoAct = new QAction(undoIcon, tr("Undo(&U)"),this);
+    QAction *undoAct = new QAction(undoIcon, tr("Undo(&Z)"),this);
     undoAct->setShortcuts(QKeySequence::Undo);
     undoAct->setStatusTip(tr("Undo the last action"));
     connect(undoAct, &QAction::triggered, textEdit, &QPlainTextEdit::undo);
     editMenu->addAction(undoAct);
 
     const QIcon redoIcon = QIcon::fromTheme("edit-redo", QIcon(":/images/redo.png"));
-    QAction *redoAct = new QAction(redoIcon, tr("Redo(&R)"),this);
+    QAction *redoAct = new QAction(redoIcon, tr("Redo(&Y)"),this);
     redoAct->setShortcuts(QKeySequence::Redo);
     redoAct->setStatusTip(tr("Redo the last action"));
     connect(redoAct, &QAction::triggered, textEdit, &QPlainTextEdit::redo);
@@ -306,6 +306,7 @@ void MainWindow::createActions()
     editToolBar->addAction(findAct);
 
 
+    //设置undo、redo、cut、copy等功能的可用性
     undoAct->setEnabled(false);
     redoAct->setEnabled(false);
     cutAct->setEnabled(false);

@@ -12,11 +12,6 @@
         <translation>简易编辑器</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
-        <source> v1.1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="129"/>
         <source>Cannot read file %1:
 %2.</source>
@@ -59,6 +54,11 @@ Do you want to save your changes?</source>
         <location filename="../mainwindow.cpp" line="180"/>
         <source>Cancel</source>
         <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="199"/>
+        <source>untitled.txt</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="209"/>
@@ -131,37 +131,47 @@ Do you want to save your changes?</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="259"/>
+        <location filename="../mainwindow.cpp" line="261"/>
+        <source>Undo the last action</source>
+        <translation>撤销上一次操作</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="268"/>
+        <source>Redo the last action</source>
+        <translation>恢复上一次撤销的操作</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="275"/>
         <source>Cut(&amp;X)</source>
         <translation>剪切(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="277"/>
         <source>Cut the current selection&apos;s contents to the clipboard</source>
         <translation>剪切当前选择内容到剪贴板</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="285"/>
         <source>Copy the current selection&apos;s contents to the clipboard</source>
         <translation>复制当前选择内容到剪切板</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="287"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Find text from the the document</source>
         <translation>从当前文件中查找特定文本</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Copy(&amp;C)</source>
         <translation>复制(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="293"/>
         <source>Paste the clipboard&apos;s contents into the current selection</source>
         <translation>粘贴当前剪贴板内容</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Paste(&amp;V)</source>
         <translation>粘贴(&amp;V)</translation>
     </message>
@@ -199,6 +209,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="100"/>
+        <source> v1.2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="102"/>
         <source>This is Xiri&apos;s first application writen by Qt.</source>
         <translation>这是夕日使用Qt写就的第一个应用。</translation>
@@ -209,32 +224,37 @@ Do you want to save your changes?</source>
         <translation>无法找到文本“%1”</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="199"/>
-        <source>untitled</source>
-        <translation type="unfinished"></translation>
+        <location filename="../mainwindow.cpp" line="259"/>
+        <source>Undo(&amp;Z)</source>
+        <translation>撤销(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="285"/>
+        <location filename="../mainwindow.cpp" line="266"/>
+        <source>Redo(&amp;Y)</source>
+        <translation>恢复(&amp;Y)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Find(&amp;F)</source>
         <translation>查找(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="319"/>
         <source>Help(&amp;H)</source>
         <translation>帮助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="301"/>
+        <location filename="../mainwindow.cpp" line="322"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="../mainwindow.cpp" line="323"/>
         <source>About this editor</source>
         <translation>关于这个编辑器</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="309"/>
+        <location filename="../mainwindow.cpp" line="330"/>
         <source>Ready</source>
         <translation>准备</translation>
     </message>
